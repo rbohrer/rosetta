@@ -15,6 +15,7 @@ fun listToImage (LL : int list list) : image =
      fn i => Array.tabulate (List.length (hd LL),
        fn j => intToColor(List.nth(List.nth(LL,i),j))))
 
+(* Is the given pixel within the image ? *)
 fun inBounds (img : image) ((x,y) : int * int) : bool =
     x >= 0 andalso y >= 0 andalso y < Array.length img
     andalso x < Array.length (Array.sub(img, y))
